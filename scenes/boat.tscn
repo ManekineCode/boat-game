@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bsoumupsgnf8o"]
+
+[ext_resource type="PackedScene" uid="uid://dtiatjggirfce" path="res://assets/boat/Sail Boat.glb" id="1_0063d"]
+[ext_resource type="Script" uid="uid://d3pa2qpn15jc4" path="res://scripts/boat.gd" id="1_qyrje"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyrje"]
+size = Vector3(1.2022095, 0.44213867, 2.5144043)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lw6pk"]
+size = Vector3(1.3056641, 0.22387695, 2.7038574)
+
+[node name="Boat" type="CharacterBody3D" unique_id=1628260193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07175231, 0)
+collision_mask = 2
+script = ExtResource("1_qyrje")
+
+[node name="Root Scene" parent="." unique_id=501118363 instance=ExtResource("1_0063d")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1776591750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03475952, 0.19421387, 0.016479492)
+shape = SubResource("BoxShape3D_qyrje")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2137268390]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 4, 6)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1738215940 groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1769607993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030761719, 0.10266113, -0.005004883)
+shape = SubResource("BoxShape3D_lw6pk")
