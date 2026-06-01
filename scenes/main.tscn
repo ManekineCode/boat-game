@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://crtneyg0es032" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bqfo4kmih8ees" path="res://pezibear-template-1890172_1920.jpg" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cevftq16j0lm5" path="res://scenes/island_1.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://tqw4547v2ima" path="res://scenes/ui.tscn" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -89,6 +90,8 @@ mesh = SubResource("PlaneMesh_sugp2")
 surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
 
 [node name="island-1" parent="." unique_id=297615845 instance=ExtResource("4_jyhfs")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -11.192495)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.79978, -1.9991131, -51.14859)
+
+[node name="UI" parent="." unique_id=569422506 instance=ExtResource("5_tbgi4")]
 
 [connection signal="area_shape_entered" from="Island3/Area3D" to="." method="_on_area_3d_area_shape_entered"]

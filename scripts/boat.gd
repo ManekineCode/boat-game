@@ -17,9 +17,9 @@ var bob_speed = 0.3
 
 func _physics_process(delta):
 	# Get input from the Up/Down arrow keys
-	var move_input = Input.get_axis("ui_down", "ui_up")
+	var move_input = Input.get_axis("move_back", "move_forward")
 	# Get input from the Left/Right arrow keys
-	var turn_input = Input.get_axis("ui_right", "ui_left")
+	var turn_input = Input.get_axis("move_right", "move_left")
 
 	# Smoothly change speed
 	# If we are pressing up or down, move towards our max speed.
