@@ -16,6 +16,7 @@ var bob_amount = 0.05
 var bob_speed = 0.3
 
 func _physics_process(delta):
+	
 	# Get input from the Up/Down arrow keys
 	var move_input = Input.get_axis("move_back", "move_forward")
 	# Get input from the Left/Right arrow keys
@@ -49,3 +50,16 @@ func _physics_process(delta):
 
 	# This is the magic function that actually moves our CharacterBody3D and handles collisions.
 	move_and_slide()
+	
+func _process(delta: float) -> void:
+	control_camera(delta)
+	
+	
+func control_camera(delta):
+	if Input.is_action_pressed("camera_rotate_left"):
+		$CameraAxis.rotation_degrees.y += 100 * delta
+	elif Input.is_action_pressed("camera_rotate_right"):
+		$CameraAxis.rotation_degrees.y -= 100 * delta
+	elif Input.is_action_just_pressed("camera_reset"): #reset camera
+		var ease_camera = get_tree().create_tween()
+		ease_camera.tween_property($CameraAxis, "rotation", Vector3.ZERO, 0.5)
