@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmagmavuqp4nb"]
+
+[ext_resource type="PackedScene" uid="uid://dj7qbs22s1qb3" path="res://assets/prototype assets/stone_arch_1.glb" id="1_jkki2"]
+
+[node name="stone_arch_1" unique_id=478889638 instance=ExtResource("1_jkki2")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)

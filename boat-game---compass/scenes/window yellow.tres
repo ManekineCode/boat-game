@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cho672l5c8rwk"]
+
+[resource]
+resource_name = "window yellow"
+cull_mode = 2
+albedo_color = Color(0.89242136, 0.90633965, 0.48677686, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 0.9211379, 0.3547592, 1)
+emission_energy_multiplier = 5.7999997

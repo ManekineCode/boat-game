@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://baagdmwc71bhs"]
+
+[ext_resource type="PackedScene" uid="uid://bsoumupsgnf8o" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://crtneyg0es032" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bqfo4kmih8ees" path="res://assets/prototype assets/sea texture.jpg" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cevftq16j0lm5" path="res://scenes/prototype scenes/island_1.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://tqw4547v2ima" path="res://scenes/ui.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bmagmavuqp4nb" path="res://scenes/prototype scenes/stone_arch_1.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dujv7brydit2b" path="res://assets/prototype assets/pale.glb" id="7_o6xl0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
+sun_curve = 0.50453746
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 2
+sky = SubResource("Sky_sugp2")
+glow_levels/1 = 22.1
+glow_levels/3 = 16.0
+glow_levels/4 = 10.45
+glow_intensity = 3.52
+fog_enabled = true
+fog_light_color = Color(0.23941123, 0.13428089, 0.018115535, 1)
+fog_density = 0.0512
+
+[sub_resource type="SphereMesh" id="SphereMesh_tbgi4"]
+radius = 40.0
+height = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
+albedo_color = Color(0.41568628, 0.19215687, 0.4627451, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0wfyh"]
+height = 21.291504
+radius = 32.91162
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jyhfs"]
+height = 12.805664
+radius = 39.696777
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sugp2"]
+size = Vector2(2000, 2000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(0.07450981, 1, 1, 1)
+albedo_texture = ExtResource("2_0wfyh")
+
+[node name="Main" type="Node3D" unique_id=1518750202]
+script = ExtResource("1_sugp2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1133019779]
+environment = SubResource("Environment_jyhfs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1178614467]
+transform = Transform3D(1, 0, 0, 0, -0.47138128, 0.8819295, 0, -0.8819295, -0.47138128, 0, 4.5647364, -3.3391256)
+light_volumetric_fog_energy = 0.0
+
+[node name="Boat" parent="." unique_id=1628260193 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63317657, 117.26232)
+
+[node name="Island" type="MeshInstance3D" parent="." unique_id=1913684511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.66068, -6, -268.352)
+mesh = SubResource("SphereMesh_tbgi4")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Island" unique_id=1188782672]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island/StaticBody3D" unique_id=181065883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13208008, 0)
+shape = SubResource("CylinderShape3D_0wfyh")
+
+[node name="Island2" type="MeshInstance3D" parent="." unique_id=1445676570]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 93.92913, -3.8698273, 0)
+mesh = SubResource("SphereMesh_tbgi4")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
+
+[node name="Island3" type="MeshInstance3D" parent="." unique_id=1150916443]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -206.83684, -6, -144.22397)
+mesh = SubResource("SphereMesh_tbgi4")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
+
+[node name="Area3D" type="Area3D" parent="Island3" unique_id=1508114335]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island3/Area3D" unique_id=53781496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.402832, 0)
+shape = SubResource("CylinderShape3D_jyhfs")
+
+[node name="Island4" type="MeshInstance3D" parent="." unique_id=2123640510]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 84.186035, -3.4842033, -132.43414)
+mesh = SubResource("SphereMesh_tbgi4")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=97586478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.36435, -0.20091581, 2.4348931)
+mesh = SubResource("PlaneMesh_sugp2")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
+
+[node name="island-1" parent="." unique_id=297615845 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.79978, -1.9991131, -51.14859)
+
+[node name="UI" parent="." unique_id=569422506 instance=ExtResource("5_tbgi4")]
+
+[node name="stone_arch_1" parent="." unique_id=478889638 instance=ExtResource("6_tefeu")]
+transform = Transform3D(0.6594284, 0, 1.1203365, 0, 1.3, 0, -1.1203365, 0, 0.6594284, 0, 0.9692192, -26.757523)
+
+[node name="pale" parent="." unique_id=1239792241 instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.04125, 0, 0)
+
+[connection signal="area_shape_entered" from="Island3/Area3D" to="." method="_on_area_3d_area_shape_entered"]

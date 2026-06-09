@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3sx70mtl7qd"]
+
+[ext_resource type="PackedScene" uid="uid://dujv7brydit2b" path="res://assets/prototype assets/pale.glb" id="1_ne122"]
+[ext_resource type="Texture2D" uid="uid://cqxe1ktlmtgvy" path="res://scenes/red stone basic color.png" id="2_xt5dh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xt5dh"]
+cull_mode = 2
+albedo_texture = ExtResource("2_xt5dh")
+
+[node name="pale" unique_id=885600344 instance=ExtResource("1_ne122")]
+
+[node name="hexagonal stone_003" parent="." index="0" unique_id=268592216]
+surface_material_override/0 = SubResource("StandardMaterial3D_xt5dh")
