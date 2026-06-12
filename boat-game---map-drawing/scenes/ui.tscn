@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://tqw4547v2ima"]
+
+[ext_resource type="Script" uid="uid://cakhiicb7vuqe" path="res://scripts/ui.gd" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://c1yry6lw8ovx" path="res://assets/prototype assets/compass_rose.png" id="2_yev5y"]
+[ext_resource type="Texture2D" uid="uid://8kn78yumx8x1" path="res://assets/prototype assets/compass_arrow.png" id="3_gdt2y"]
+[ext_resource type="Script" uid="uid://qf6ln8oba1xw" path="res://scripts/ui/compass.gd" id="3_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://c80b8434ck1vp" path="res://assets/prototype assets/tracker_arrow.png" id="5_wm3ai"]
+
+[node name="UI" type="CanvasLayer" unique_id=569422506]
+script = ExtResource("1_nt7q6")
+
+[node name="Control" type="Control" parent="." unique_id=1737491207]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FPS" type="Label" parent="Control" unique_id=1933556951]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TrackerDistance" type="Label" parent="Control" unique_id=1616353732]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 47.0
+
+[node name="Compass" type="TextureRect" parent="." unique_id=368015279]
+offset_left = 33.0
+offset_top = 564.0
+offset_right = 673.0
+offset_bottom = 1204.0
+scale = Vector2(0.18549007, 0.18549007)
+texture = ExtResource("2_yev5y")
+script = ExtResource("3_wm3ai")
+
+[node name="CompassAxis" type="Marker2D" parent="Compass" unique_id=516404880]
+position = Vector2(345.03198, 317.62158)
+
+[node name="CompassArrow" type="Sprite2D" parent="Compass/CompassAxis" unique_id=1275315521]
+texture = ExtResource("3_gdt2y")
+
+[node name="TrackerAxis" type="Marker2D" parent="Compass" unique_id=2055291413]
+position = Vector2(345.032, 317.622)
+
+[node name="TrackerArrow" type="Sprite2D" parent="Compass/TrackerAxis" unique_id=1475087273]
+position = Vector2(0, -274.49292)
+texture = ExtResource("5_wm3ai")

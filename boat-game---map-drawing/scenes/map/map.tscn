@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://vyluylrcyyyq"]
+
+[ext_resource type="Script" uid="uid://j06ipq67kqd" path="res://scripts/map/map.gd" id="1_a2pkv"]
+[ext_resource type="Texture2D" uid="uid://c16uuhlxc513g" path="res://assets/prototype assets/map_grid_10_10.png" id="1_tqkkf"]
+[ext_resource type="PackedScene" uid="uid://ditn6yn8opsej" path="res://scenes/map/map_camera_manager.tscn" id="2_tqkkf"]
+
+[node name="Map" type="Control" unique_id=2036920108]
+modulate = Color(1, 1, 1, 0.47843137)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2pkv")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=317418907]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=397510161]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="MapBackground" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1340566394]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 320.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.75686276, 1)
+
+[node name="MapGrid" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=2074607814]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 320.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_tqkkf")
+
+[node name="MapCameraManager" parent="SubViewportContainer/SubViewport" unique_id=1229271432 instance=ExtResource("2_tqkkf")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=2032584965]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/CanvasLayer" unique_id=1077443618]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_vertical = 0
