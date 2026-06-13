@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsoumupsgnf8o" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://crtneyg0es032" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="Texture2D" uid="uid://bqfo4kmih8ees" path="res://assets/prototype assets/sea texture.jpg" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://du78ecqntyr8r" path="res://assets/prototype assets/water.png" id="3_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cevftq16j0lm5" path="res://scenes/prototype scenes/island_1.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://tqw4547v2ima" path="res://scenes/ui.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bmagmavuqp4nb" path="res://scenes/prototype scenes/stone_arch_1.tscn" id="6_tefeu"]
@@ -43,11 +43,11 @@ height = 12.805664
 radius = 39.696777
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sugp2"]
-size = Vector2(2000, 2000)
+size = Vector2(1000, 1000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_color = Color(0.07450981, 1, 1, 1)
-albedo_texture = ExtResource("2_0wfyh")
+albedo_texture = ExtResource("3_85g3d")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_tipki"]
 
@@ -65,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, -0.47138128, 0.8819295, 0, -0.8819295, -0.47
 light_volumetric_fog_energy = 0.0
 
 [node name="Boat" parent="." unique_id=1628260193 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.46774, 0.63317657, -258.0959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.19104, 0.63317657, 348.8712)
 
 [node name="Island" type="MeshInstance3D" parent="." unique_id=1913684511]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.66068, -6, -268.352)
@@ -81,12 +81,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13208008, 0)
 shape = SubResource("CylinderShape3D_0wfyh")
 
 [node name="Island2" type="MeshInstance3D" parent="." unique_id=1445676570]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 93.92913, -3.8698273, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -74.301094, -3.8698273, 255.85086)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island3" type="MeshInstance3D" parent="." unique_id=1150916443]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -206.83684, -6, -144.22397)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 278.34668, -6, 254.36514)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
@@ -97,7 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.402832, 0)
 shape = SubResource("CylinderShape3D_jyhfs")
 
 [node name="Island4" type="MeshInstance3D" parent="." unique_id=2123640510]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 84.186035, -3.4842033, -132.43414)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -271.51895, -3.4842033, 154.10669)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
@@ -118,11 +118,11 @@ transform = Transform3D(0.6594284, 0, 1.1203365, 0, 1.3, 0, -1.1203365, 0, 0.659
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.04125, 0, 0)
 
 [node name="TrackerTest" type="Marker3D" parent="." unique_id=1051645750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1173.9929, 0, 4.0688043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.82443, 0, 454.27393)
 script = ExtResource("8_tipki")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TrackerTest" unique_id=2003250892]
-transform = Transform3D(2.3911834, 0, 0, 0, 9.529926, 0, 0, 0, 2.3911834, 0, 10.398415, 0)
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_tipki")
 surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
 

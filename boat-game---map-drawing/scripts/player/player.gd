@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+
+
 # Boat settings
 var max_speed = 15
 var acceleration = 1
