@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b7bfylm67n7r"]
+
+[ext_resource type="Script" uid="uid://bseo6lthohuav" path="res://scenes/map/map_ruler.gd" id="1_c6j8r"]
+[ext_resource type="Texture2D" uid="uid://dl85fk3ard0ml" path="res://assets/prototype assets/mapruler.png" id="1_i2t7p"]
+
+[node name="MapRuler" type="Node2D" unique_id=927517630]
+script = ExtResource("1_c6j8r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1759814954]
+scale = Vector2(2, 2)
+texture = ExtResource("1_i2t7p")
