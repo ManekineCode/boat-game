@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://brwis64i1x7xx" path="res://assets/prototype assets/color-picker_2.png" id="5_vvrx0"]
 [ext_resource type="Texture2D" uid="uid://c3fadnti7n408" path="res://assets/prototype assets/color-picker_3.png" id="6_f17u5"]
 [ext_resource type="Texture2D" uid="uid://c6uy01sgnrb7d" path="res://assets/prototype assets/color-picker_4.png" id="7_b56te"]
+[ext_resource type="Script" uid="uid://oe30u27ekd1p" path="res://scripts/map/map_label_namer.gd" id="9_b56te"]
 [ext_resource type="PackedScene" uid="uid://b7bfylm67n7r" path="res://scenes/map/map_ruler.tscn" id="10_f17u5"]
 
 [node name="Map" type="Control" unique_id=2036920108]
@@ -27,6 +28,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=397510161]
+unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
@@ -100,6 +102,23 @@ icon = ExtResource("6_f17u5")
 layout_mode = 2
 icon = ExtResource("7_b56te")
 
+[node name="MapLabelNamer" type="LineEdit" parent="SubViewportContainer/SubViewport/CanvasLayer" unique_id=1431932901]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.25
+offset_top = -15.5
+offset_right = 42.25
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+max_length = 15
+emoji_menu_enabled = false
+clear_button_enabled = true
+script = ExtResource("9_b56te")
+
 [node name="MapDrawingComponent" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1278648407]
 script = ExtResource("4_ph54e")
 
@@ -112,3 +131,4 @@ position = Vector2(640, 360)
 [connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button2" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_2_pressed"]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button3" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_3_pressed"]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button4" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_4_pressed"]
+[connection signal="text_submitted" from="SubViewportContainer/SubViewport/CanvasLayer/MapLabelNamer" to="SubViewportContainer/SubViewport/CanvasLayer/MapLabelNamer" method="_on_text_submitted"]

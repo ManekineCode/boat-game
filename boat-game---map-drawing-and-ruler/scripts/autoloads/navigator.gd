@@ -17,5 +17,6 @@ var map_drawing_color : Color = Color(0.075, 0.141, 0.251, 1.0)
 #region Player control
 
 var can_control : bool = true
+var can_draw : bool = false
 
 #endregion
