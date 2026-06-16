@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="boat game - map drawing and ruler"
+config/name="boat game - map labels"
 run/main_scene="uid://baagdmwc71bhs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -21,10 +21,9 @@ Navigator="*uid://cbxhqgndl0cws"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=2
-window/stretch/mode="canvas_items"
 
 [global_group]
 
