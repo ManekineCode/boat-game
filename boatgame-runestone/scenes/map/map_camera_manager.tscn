@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ditn6yn8opsej"]
+
+[ext_resource type="Script" uid="uid://bikga1h80acy0" path="res://scripts/map/map_camera_manager.gd" id="1_3vv27"]
+
+[node name="MapCameraManager" type="Node2D" unique_id=1229271432]
+position = Vector2(960, 540)
+script = ExtResource("1_3vv27")
+
+[node name="MapCamera" type="Camera2D" parent="." unique_id=1724751342]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+limit_smoothed = true

@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://vyluylrcyyyq"]
+
+[ext_resource type="Script" uid="uid://j06ipq67kqd" path="res://scripts/map/map.gd" id="1_a2pkv"]
+[ext_resource type="Texture2D" uid="uid://c16uuhlxc513g" path="res://assets/prototype assets/map_grid_10_10.png" id="1_tqkkf"]
+[ext_resource type="PackedScene" uid="uid://ditn6yn8opsej" path="res://scenes/map/map_camera_manager.tscn" id="2_tqkkf"]
+[ext_resource type="Script" uid="uid://dfb4046h3oabs" path="res://scripts/map/map_drawing_component.gd" id="4_ph54e"]
+[ext_resource type="Texture2D" uid="uid://b8as1bwsiy1h6" path="res://assets/prototype assets/color-picker_1.png" id="4_sqgf4"]
+[ext_resource type="Script" uid="uid://knc4cfx60sm4" path="res://scripts/map/map_color_picker.gd" id="4_vvrx0"]
+[ext_resource type="Texture2D" uid="uid://brwis64i1x7xx" path="res://assets/prototype assets/color-picker_2.png" id="5_vvrx0"]
+[ext_resource type="Texture2D" uid="uid://c3fadnti7n408" path="res://assets/prototype assets/color-picker_3.png" id="6_f17u5"]
+[ext_resource type="Texture2D" uid="uid://c6uy01sgnrb7d" path="res://assets/prototype assets/color-picker_4.png" id="7_b56te"]
+[ext_resource type="Script" uid="uid://oe30u27ekd1p" path="res://scripts/map/map_label_namer.gd" id="9_b56te"]
+[ext_resource type="PackedScene" uid="uid://b7bfylm67n7r" path="res://scenes/map/map_ruler.tscn" id="10_f17u5"]
+
+[node name="Map" type="Control" unique_id=2036920108]
+modulate = Color(1, 1, 1, 0.69411767)
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2pkv")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=317418907]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=397510161]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="MapBackground" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1340566394]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 320.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.75686276, 1)
+
+[node name="PLACEHOLDERLabel" type="Label" parent="SubViewportContainer/SubViewport/MapBackground" unique_id=1439190083]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 468.0
+offset_right = 161.0
+offset_bottom = 491.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "START ->"
+
+[node name="MapGrid" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=2074607814]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 320.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_tqkkf")
+
+[node name="MapLabelNamer" type="LineEdit" parent="SubViewportContainer/SubViewport" unique_id=1431932901]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.25
+offset_top = -15.5
+offset_right = 42.25
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+max_length = 15
+emoji_menu_enabled = false
+clear_button_enabled = true
+script = ExtResource("9_b56te")
+
+[node name="MapCameraManager" parent="SubViewportContainer/SubViewport" unique_id=1229271432 instance=ExtResource("2_tqkkf")]
+
+[node name="MapDrawingComponent" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1278648407]
+script = ExtResource("4_ph54e")
+
+[node name="Line2D" type="Line2D" parent="SubViewportContainer/SubViewport/MapDrawingComponent" unique_id=1923487601]
+
+[node name="MapRuler" parent="SubViewportContainer/SubViewport" unique_id=927517630 instance=ExtResource("10_f17u5")]
+position = Vector2(960, 950)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=2032584965]
+
+[node name="MapColorPicker" type="GridContainer" parent="SubViewportContainer/SubViewport/CanvasLayer" unique_id=1769630882]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_right = 86.0
+offset_bottom = 40.0
+grow_horizontal = 2
+columns = 4
+script = ExtResource("4_vvrx0")
+
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" unique_id=1944129671]
+layout_mode = 2
+icon = ExtResource("4_sqgf4")
+
+[node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" unique_id=165235487]
+layout_mode = 2
+icon = ExtResource("5_vvrx0")
+
+[node name="Button3" type="Button" parent="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" unique_id=1896291130]
+layout_mode = 2
+icon = ExtResource("6_f17u5")
+
+[node name="Button4" type="Button" parent="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" unique_id=1047462773]
+layout_mode = 2
+icon = ExtResource("7_b56te")
+
+[connection signal="text_submitted" from="SubViewportContainer/SubViewport/MapLabelNamer" to="SubViewportContainer/SubViewport/MapLabelNamer" method="_on_text_submitted"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button2" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_2_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button3" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_3_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button4" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_4_pressed"]

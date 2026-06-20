@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d3ttw04p37lmh"]
+
+[ext_resource type="Script" uid="uid://v483iyetvfhe" path="res://scripts/rune_stone.gd" id="1_jimhi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_iqo14"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jimhi"]
+albedo_color = Color(1, 0, 1, 1)
+
+[node name="RuneStone" type="Node3D" unique_id=1716025293]
+script = ExtResource("1_jimhi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=297411186]
+mesh = SubResource("SphereMesh_iqo14")
+surface_material_override/0 = SubResource("StandardMaterial3D_jimhi")
