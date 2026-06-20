@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16uuhlxc513g"
-path.s3tc="res://.godot/imported/map_grid_10_10.png-990e1b85f0aa7c6e6182feeb3d13901f.s3tc.ctex"
+uid="uid://cybt7xrk6x63t"
+path.s3tc="res://.godot/imported/scarysky.png-9af0734076528c2848d1341e6237976f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/prototype assets/map_grid_10_10.png"
-dest_files=["res://.godot/imported/map_grid_10_10.png-990e1b85f0aa7c6e6182feeb3d13901f.s3tc.ctex"]
+source_file="res://assets/prototype assets/scarysky.png"
+dest_files=["res://.godot/imported/scarysky.png-9af0734076528c2848d1341e6237976f.s3tc.ctex"]
 
 [params]
 

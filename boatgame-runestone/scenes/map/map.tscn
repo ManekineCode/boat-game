@@ -60,15 +60,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0.75686276, 1)
 
-[node name="PLACEHOLDERLabel" type="Label" parent="SubViewportContainer/SubViewport/MapBackground" unique_id=1439190083]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 468.0
-offset_right = 161.0
-offset_bottom = 491.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "START ->"
-
 [node name="MapGrid" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=2074607814]
 anchors_preset = 8
 anchor_left = 0.5

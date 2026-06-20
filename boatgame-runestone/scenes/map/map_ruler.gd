@@ -3,7 +3,7 @@ extends Node2D
 var _starting_position = Vector2(960, 950)
 
 var _move_speed : float = 250
-var _move_speed_slow : float = 150
+var _move_speed_slow : float = 100
 var _move_speed_normal : float = 300
 
 var _rotation_speed : float = 1.5
