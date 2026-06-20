@@ -19,9 +19,12 @@ func _input(event: InputEvent) -> void:
 		Navigator.can_draw = false
 		Navigator.is_adding_map_label = true
 		visible = true
-		_map_label_position = get_global_mouse_position() #this is where I'd like the label to appear
+		_map_label_position.x = get_global_mouse_position().x #this is where I'd like the label to appear
+		_map_label_position.y = get_global_mouse_position().y - 15 #this is where I'd like the label to appear
 		grab_focus()
 		
+## On CTRL-Click an input box opops up where you can add the name of a landmark.
+## Located in Map.tscn
 func create_new_label(mouse_pos : Vector2, label : StringName):
 	var new_label = _map_label_text.instantiate()
 	new_label.label_text = label

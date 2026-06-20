@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0.75686276, 1)
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/MapBackground" unique_id=1439190083]
+[node name="PLACEHOLDERLabel" type="Label" parent="SubViewportContainer/SubViewport/MapBackground" unique_id=1439190083]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 468.0
@@ -103,6 +103,14 @@ script = ExtResource("9_b56te")
 
 [node name="MapCameraManager" parent="SubViewportContainer/SubViewport" unique_id=1229271432 instance=ExtResource("2_tqkkf")]
 
+[node name="MapDrawingComponent" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1278648407]
+script = ExtResource("4_ph54e")
+
+[node name="Line2D" type="Line2D" parent="SubViewportContainer/SubViewport/MapDrawingComponent" unique_id=1923487601]
+
+[node name="MapRuler" parent="SubViewportContainer/SubViewport" unique_id=927517630 instance=ExtResource("10_f17u5")]
+position = Vector2(960, 950)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=2032584965]
 
 [node name="MapColorPicker" type="GridContainer" parent="SubViewportContainer/SubViewport/CanvasLayer" unique_id=1769630882]
@@ -131,14 +139,6 @@ icon = ExtResource("6_f17u5")
 [node name="Button4" type="Button" parent="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" unique_id=1047462773]
 layout_mode = 2
 icon = ExtResource("7_b56te")
-
-[node name="MapDrawingComponent" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1278648407]
-script = ExtResource("4_ph54e")
-
-[node name="Line2D" type="Line2D" parent="SubViewportContainer/SubViewport/MapDrawingComponent" unique_id=1923487601]
-
-[node name="MapRuler" parent="SubViewportContainer/SubViewport" unique_id=927517630 instance=ExtResource("10_f17u5")]
-position = Vector2(960, 950)
 
 [connection signal="text_submitted" from="SubViewportContainer/SubViewport/MapLabelNamer" to="SubViewportContainer/SubViewport/MapLabelNamer" method="_on_text_submitted"]
 [connection signal="pressed" from="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker/Button" to="SubViewportContainer/SubViewport/CanvasLayer/MapColorPicker" method="_on_button_pressed"]

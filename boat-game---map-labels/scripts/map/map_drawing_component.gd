@@ -4,7 +4,7 @@ var _drawing: bool = false
 var _erasing: bool = false
 var _current_line: Line2D = null
 
-const ERASE_RADIUS = 10.0
+const ERASE_RADIUS = 3.0
 
 func _process(_delta: float) -> void:
 	# If drawing got disabled externally, reset state

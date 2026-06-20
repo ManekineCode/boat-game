@@ -6,7 +6,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	Navigator.map_drawing_color = Color(0.075, 0.141, 0.251, 1.0)
+	Navigator.map_drawing_color = Color(0.075, 0.141, 0.251, 1.0) # also default color
 
 
 func _on_button_3_pressed() -> void:
