@@ -41,10 +41,10 @@ fog_height = 126.68
 fog_height_density = 0.0035
 fog_depth_curve = -0.5
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
 volumetric_fog_albedo = Color(0.69272333, 0.8127467, 0.44961792, 1)
 volumetric_fog_length = 40.0
 volumetric_fog_ambient_inject = 1.63
-adjustment_enabled = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_tbgi4"]
 radius = 40.0
@@ -97,26 +97,25 @@ transform = Transform3D(1, 0, 0, 0, -0.47138128, 0.8819295, 0, -0.8819295, -0.47
 light_volumetric_fog_energy = 0.0
 
 [node name="Boat" parent="." unique_id=1628260193 instance=ExtResource("1_o5qli")]
-transform = Transform3D(-0.99980927, 0, 0.019528968, 0, 1, 0, -0.019528968, 0, -0.99980927, -106.17526, 0, -306.5949)
+transform = Transform3D(-0.99980927, 0, 0.019528968, 0, 1, 0, -0.019528968, 0, -0.99980927, -334.02954, 0, -374.36694)
 
 [node name="Island" type="MeshInstance3D" parent="." unique_id=1913684511]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -236.8939, -6, 295.21332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.11383, -6, -46.235504)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island2" type="MeshInstance3D" parent="." unique_id=1445676570]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -233.01529, -3.8698273, 41.94451)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -59.68448, -3.8698273, -317.74963)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island3" type="MeshInstance3D" parent="." unique_id=1150916443]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -379.9013, -6, 152.9972)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 20.19342, -6, -181.93546)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island4" type="MeshInstance3D" parent="." unique_id=2123640510]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -398.84308, -0.75896263, 127.6622)
-visibility_range_end = 800.0
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -398.84308, 2.5467644, 127.6622)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
@@ -127,14 +126,13 @@ surface_material_override/0 = SubResource("ShaderMaterial_a8y0u")
 
 [node name="DEBUG_Grid" type="MeshInstance3D" parent="." unique_id=1957427652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.43338, 0)
-visible = false
 mesh = SubResource("PlaneMesh_sugp2")
 surface_material_override/0 = SubResource("StandardMaterial3D_eb6dy")
 
 [node name="UI" parent="." unique_id=569422506 instance=ExtResource("5_tbgi4")]
 
 [node name="stone_arch_1" parent="." unique_id=478889638 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.2918835, 0, 1.2668084, 0, 1.2999998, 0, -1.2668084, 0, -0.2918835, -134.18307, 0.9692192, -57.92743)
+transform = Transform3D(-0.2918835, 0, 1.2668084, 0, 1.2999998, 0, -1.2668084, 0, -0.2918835, -160.2479, 0.9692192, -179.12875)
 
 [node name="pale" parent="." unique_id=1239792241 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(0.7502842, 0, -0.66111547, 0, 1, 0, 0.66111547, 0, 0.7502842, 250.28809, 0, -339.29343)
