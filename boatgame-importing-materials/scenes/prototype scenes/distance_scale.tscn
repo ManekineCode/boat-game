@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c87b1kna2jfny"]
+
+[ext_resource type="PackedScene" uid="uid://gxv8hbmbw4b4" path="res://assets/prototype assets/distance_scale.glb" id="1_vsy5x"]
+
+[node name="distance_scale" unique_id=720647388 instance=ExtResource("1_vsy5x")]
+
+[node name="M5" parent="." index="0" unique_id=1633729254]
+layers = 2
+gi_mode = 0
+
+[node name="M20" parent="." index="1" unique_id=524736689]
+layers = 2
+gi_mode = 0
+
+[node name="M10" parent="." index="2" unique_id=1882006704]
+layers = 2
+gi_mode = 0
