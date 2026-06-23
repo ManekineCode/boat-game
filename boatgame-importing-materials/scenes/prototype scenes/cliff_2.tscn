@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dusyp5doeq6yn"]
+
+[ext_resource type="PackedScene" uid="uid://bkvjb50j8i3x8" path="res://cliff2.glb" id="1_4jba1"]
+
+[node name="cliff2" unique_id=963834108 instance=ExtResource("1_4jba1")]
+
+[node name="Plane" parent="." index="0" unique_id=1876541794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40777516, 0)

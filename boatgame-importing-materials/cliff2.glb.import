@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bothdqb42jdcg"
-path="res://.godot/imported/manor.glb-0333e61a334448e801ed3164c2f0f224.scn"
+uid="uid://bkvjb50j8i3x8"
+path="res://.godot/imported/cliff2.glb-2f32f528f0f9f1d6f4dacde953cbbd21.scn"
 
 [deps]
 
-source_file="res://assets/prototype assets/manor.glb"
-dest_files=["res://.godot/imported/manor.glb-0333e61a334448e801ed3164c2f0f224.scn"]
+source_file="res://cliff2.glb"
+dest_files=["res://.godot/imported/cliff2.glb-2f32f528f0f9f1d6f4dacde953cbbd21.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

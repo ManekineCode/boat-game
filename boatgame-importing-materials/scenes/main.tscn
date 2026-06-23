@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bh78s5grl0230" path="res://scripts/tracker_test.gd" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://vyluylrcyyyq" path="res://scenes/map/map.tscn" id="9_85g3d"]
 [ext_resource type="Script" uid="uid://bp5ixp48xu35s" path="res://scripts/runestone_world_spawner.gd" id="10_choun"]
-[ext_resource type="PackedScene" uid="uid://bothdqb42jdcg" path="res://assets/prototype assets/manor.glb" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://dusyp5doeq6yn" path="res://scenes/prototype scenes/cliff_2.tscn" id="13_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ya4ey"]
 sky_top_color = Color(0.026292602, 0.039670978, 0.059542067, 1)
@@ -41,9 +41,10 @@ fog_sky_affect = 0.467
 fog_height = 126.68
 fog_height_density = 0.0035
 fog_depth_curve = -0.5
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+volumetric_fog_density = 0.06
 volumetric_fog_albedo = Color(0.69272333, 0.8127467, 0.44961792, 1)
+volumetric_fog_emission = Color(6.3773246e-07, 0.23899662, 3.6098064e-07, 1)
+volumetric_fog_anisotropy = 0.5
 volumetric_fog_length = 40.0
 volumetric_fog_ambient_inject = 1.63
 
@@ -62,7 +63,7 @@ render_priority = 0
 shader = ExtResource("4_choun")
 shader_parameter/WATER_COL = Color(0.28465912, 0.43430406, 0.5813821, 1)
 shader_parameter/WATER2_COL = Color(0.26903886, 0.4031457, 0.44621766, 1)
-shader_parameter/FOAM_COL = Color(0.35937205, 0.7557168, 0.7697585, 1)
+shader_parameter/FOAM_COL = Color(0.17764738, 0.45300758, 0.46128166, 1)
 shader_parameter/distortion_speed = 1.0
 shader_parameter/tile = Vector2(30, 30)
 shader_parameter/wave_speed = 0.01
@@ -70,12 +71,12 @@ shader_parameter/wave_amplitude = 0.1
 shader_parameter/wave_frequency = 0.3
 shader_parameter/time_offset = 0.0
 shader_parameter/water_size = Vector2(128, 128)
-shader_parameter/water_transparency = 0.5
-shader_parameter/water_depth_factor = 0.3
-shader_parameter/foam_width = 0.5
+shader_parameter/water_transparency = 0.8
+shader_parameter/water_depth_factor = 0.1
+shader_parameter/foam_width = 10.0
 shader_parameter/foam_edge_softness = 0.05
 shader_parameter/foam_smoothness = 0.03
-shader_parameter/foam_distortion_speed = 0.5
+shader_parameter/foam_distortion_speed = 1.0
 shader_parameter/foam_distortion_amount = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb6dy"]
@@ -101,22 +102,22 @@ light_volumetric_fog_energy = 0.0
 transform = Transform3D(-0.99980927, 0, 0.019528968, 0, 1, 0, -0.019528968, 0, -0.99980927, -334.02954, 0.5973203, -374.36694)
 
 [node name="Island" type="MeshInstance3D" parent="." unique_id=1913684511]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.11383, -6, -46.235504)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -325.11383, -6, -65.235504)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island2" type="MeshInstance3D" parent="." unique_id=1445676570]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -59.68448, -3.8698273, -317.74963)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -62.68448, -3.8698273, -139.74963)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island3" type="MeshInstance3D" parent="." unique_id=1150916443]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 20.19342, -6, -181.93546)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -158.80658, -6, 89.064545)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Island4" type="MeshInstance3D" parent="." unique_id=2123640510]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -398.84308, 2.5467644, 127.6622)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 103.15692, 2.5467644, 88.6622)
 mesh = SubResource("SphereMesh_tbgi4")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
@@ -133,7 +134,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eb6dy")
 [node name="UI" parent="." unique_id=569422506 instance=ExtResource("5_tbgi4")]
 
 [node name="stone_arch_1" parent="." unique_id=478889638 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.2918835, 0, 1.2668084, 0, 1.2999998, 0, -1.2668084, 0, -0.2918835, -160.2479, 0.9692192, -179.12875)
+transform = Transform3D(-0.2918835, 0, 1.2668084, 0, 1.2999998, 0, -1.2668084, 0, -0.2918835, -197.2479, 0.9692192, -54.128754)
 
 [node name="pale" parent="." unique_id=1239792241 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(0.7502842, 0, -0.66111547, 0, 1, 0, 0.66111547, 0, 0.7502842, 250.28809, 0, -339.29343)
@@ -152,5 +153,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
 [node name="RunestoneWorldSpawner" type="Node3D" parent="." unique_id=1476864070]
 script = ExtResource("10_choun")
 
-[node name="manor" parent="." unique_id=1899285146 instance=ExtResource("12_eb6dy")]
-transform = Transform3D(-0.602038, 0, -0.7984674, 0, 1, 0, 0.7984674, 0, -0.602038, -150.25623, 0, -185.2901)
+[node name="cliff2" parent="." unique_id=963834108 instance=ExtResource("13_trceg")]
+transform = Transform3D(0.99999714, -0.00070706883, 0.0022829555, 0.0007068991, 0.99999976, 7.511454e-05, -0.002283008, -7.349919e-05, 0.9999974, -159, 0, -174)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1lv02i8bcsll"
+path="res://.godot/imported/violin.mp3-73ee70650dce3aa3355045ee5e885c3b.mp3str"
+
+[deps]
+
+source_file="res://assets/prototype assets/violin.mp3"
+dest_files=["res://.godot/imported/violin.mp3-73ee70650dce3aa3355045ee5e885c3b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
